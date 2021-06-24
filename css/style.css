@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    background: url(../img/homeone.png) no-repeat left bottom, url(../img/hometwo.png) no-repeat right bottom, #fff;
+    background-size: 35%, 20%;
+}
+header{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    padding-top: 38px;
+    margin-left: -14px;
+}
+.logo img{
+    height: 152px;
+    width: 164px;
+}
+.wrap{
+    padding: 0 140px;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;    
+}
+.menu__item a, .menu div:last-child{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #1f1f1f;
+    text-decoration: none;
+    font-weight: 500;
+    height: 42px;
+    line-height: 42px;
+}
+.menu__item a:hover{
+    color: #6cb65a;
+    transition: 0.3s;
+}
+.menu div:last-child {
+    cursor: pointer;
+    border: 2px solid #1f1f1f;
+    border-radius: 25px;
+    width: 104px;
+    text-align: center;
+    line-height: 40px;
+}
+.menu div:last-child:hover {
+    border: 2px solid #6cb65a;
+    background-color: #6cb65a;
+    color: #eef3f5;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85%;
+    color: #19172e;
+    font-family: 'Montserrat', sans-serif;
+}
+.right{
+    width: 935px;
+    height: 560px;
+    background: url(../img/homethree.png) no-repeat center;
+    background-size: 100%;
+    margin-right: -45px;
+}
+.left{
+    width: 620px;
+}
+.content__title{
+    text-transform: uppercase;
+    font-size: 58px;
+    line-height: 68px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+.content__subtitle{
+    font-size: 24px;
+    margin: 28px 0;
+    line-height: 33px;
+    font-weight: 500;
+}
+.content__btn{
+    width: 180px;
+    height: 50px;
+    border: 3px solid #6cb65a;
+    border-radius: 40px;
+    line-height: 44px;
+    font-weight: 500;
+    font-size: 21px;
+    cursor: pointer;
+}
+.content__btn_item{
+    font-weight: 26px;
+    margin-left: 14px;
+    margin-right: 6px;
+}
+.content__btn:hover{
+    background-color: #6cb65a;
+    color: #eef3f5;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.content__btn:hover .content__btn_item{
+    color: #eef3f5;
+    transition: 0.3s;
+}
+.content__btn_item{
+    color:#6cb65a;
+}
+.content__btn, .content__btn_item, .menu div:last-child, .menu__item a{
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+footer{
+    position: absolute;
+    bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #eef3f5;
+}
+.pop-up-block{
+    position:absolute;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(22px);
+    height: 100vh;
+    background-color: #ffffff3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opasity 0.3s ease;
+}
+.pop-up-block__authorization, .pop-up-block__registration{
+    padding: 0 30px;
+    width: 950px;
+    height: 540px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 10px 20px #00000080;
+    position: absolute;
+}
+.pop-up-block__authorization{
+    background: url(../img/autorization-left.png) no-repeat left -5px top, url(../img/autorization-right.png) no-repeat right bottom -3px, #fff;
+    background-size: 50%, 38%;
+}
+.pop-up-block__registration{
+    background: url(../img/regist-left.png) no-repeat left bottom -3px, url(../img/regist-right.png) no-repeat right -3px top, #fff;
+    background-size: 38%, 50%;
+}
+.pop-up-block__right{
+    width: 440px;
+    height: 400px;
+    background: url(../img/pop-up-block.png) no-repeat center;
+    background-size: 100%;
+}
+.pop-up-block__left{
+    height: 370px;
+}
+.authorization__form input, .authorization__form button, .registration__form input, .registration__form button{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+.pop-up-block__autorization-title, .pop-up-block__registration-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #19172e;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.authorization__form input::placeholder, .registration__form input::placeholder{
+    color: #d8d7db;
+}
+.authorization__form input, .registration__form input{
+    width: 330px;
+    height: 45px;
+    font-size: 13px;
+    font-weight: 400;
+    border: 1.5px solid #19172e;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 0 12px;
+    color:#19172e;
+}
+.pop-up-block__autorization-btn, .pop-up-block__registration-btn{
+    width: 100px;
+    height: 30px;
+    background-color: #19172e;
+    color: #eef3f5;
+    margin: auto;
+    border: 2px solid #19172e;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 50px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+.pop-up-block__registration-btn{
+    width: 120px;
+}
+.pop-up-block__autorization-btn:hover, .pop-up-block__registration-btn:hover{
+    background-color: #eef3f5;
+    color: #19172e;
+    transition: 0.4s;
+}
+.pop-up-block__autorization-btntwo, .pop-up-block__registration-btntwo{
+    width: 330px;
+    height: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #19172e;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.pop-up-block__registration-btntwo{
+display: flex;
+align-items: center;
+}
+.pop-up-block__registration-icon{
+    margin-right: 50px;
+    margin-left: 20px;
+    display: block;
+}
+.display-none{
+    display: none;
+}
+.opasityOn{
+    opacity: 1;
+    transition: opacity ease 0.3s;
+}
+.opasityOf{
+    opacity:  0;
+    transition: opacity ease 0.3s;
+}

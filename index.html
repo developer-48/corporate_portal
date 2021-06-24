@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Imed</title>
+</head>
+<body>
+    <div class = "main">
+        <div class="wrap">
+            <header>
+                <div class="logo"></div>
+                <div class="menu">
+                    <div class="menu__item"><a href="#">Компания</a></div>
+                    <div class="menu__item"><a href="#">Сотрудники</a></div>
+                    <div class="menu__item"><a href="#">Сервисы</a></div>
+                    <div class="menu__item"><a href="#">Отчеты</a></div>
+                    <div id = "main__menu-btn" class="menu__item" >Вход</div>
+                </div>
+            </header>
+            <div class="content">
+                <div class="left">
+                    <div class = "content__title">Корпоративный портал</div>
+                    <div class = "content__subtitle">Всю информацию которая вас интересует можете найти здесь.</div>
+                    <div class= "content__btn"><i class="fas fa-arrow-circle-right content__btn_item"></i> События</div>
+                </div>
+                <div class="right"></div>
+            </div>
+            <footer>&copy; 2019-2021 ООО "Компания"</footer>
+        </div>
+        <div id="pop-up-block" class="pop-up-block display-none opasityOf">
+            <div id="authorization__block" class="pop-up-block__authorization opasityOf">
+                <div class="pop-up-block__left">
+                    <div class="pop-up-block__autorization-title">
+                        Авторизация
+                    </div>
+                    <form id = "authorization__form" class="authorization__form">
+                        <input id = "login" type="text" autocomplete="off" placeholder="Логин или e-mail"/>
+                        <input id = "pasword" type="text" autocomplete="off" placeholder="Пароль"/>
+                        <button class = "pop-up-block__autorization-btn">Войти</button>
+                    </form>
+                    <div id="authorization-switch" class="pop-up-block__autorization-btntwo">
+                        Отправить заявку на регистрацию <i class="fas fa-arrow-right pop-up-block__left-icon"></i>
+                    </div>
+                </div>
+                <div class="pop-up-block__right"></div>
+            </div>
+            <div id="registration__block" class="pop-up-block__registration display-none opasityOf">
+                <div class="pop-up-block__right"></div>
+                <div class="pop-up-block__left">
+                    <div class="pop-up-block__registration-title">
+                        Регистрация
+                    </div>
+                    <form id = "registration__form" class="authorization__form">
+                        <input id = "name" type="text" autocomplete="off" placeholder="ФИО"/>
+                        <input id = "e-mail" type="text" autocomplete="off" placeholder="E-mail"/>
+                        <input id = "phone" type="text" autocomplete="off" placeholder="Телефон"/>
+                        <button class = "pop-up-block__registration-btn">Отправить</button>
+                    </form>
+                    <div id="registration-switch" class="pop-up-block__registration-btntwo">
+                        <i class="fas fa-arrow-left pop-up-block__registration-icon"></i> Назад к авторизации
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let authorization__form = document.getElementById("authorization__form");
+        let registration__form = document.getElementById("registration__form");
+        let btnMain = document.getElementById("main__menu-btn");
+        let popUpBlock = document.getElementById("pop-up-block");
+        let registrationSwitch = document.getElementById("registration-switch");
+        let authorizationSwitch = document.getElementById("authorization-switch");
+        let authorization__block = document.getElementById("authorization__block");
+        let registration__block = document.getElementById("registration__block");
+        authorization__form.onclick= () => {
+            event.preventDefault();
+        };
+        registration__form.onclick = () => {
+            event.preventDefault();
+        };
+        popUpBlock.onclick = (event) => {
+            if(event.target.classList.contains("pop-up-block")){
+                event.target.classList.remove('opasityOn');
+                event.target.classList.add('opasityOf');
+                setTimeout(() => {
+                    event.target.classList.add('display-none');
+                }, 300)
+            }
+        }
+        btnMain.onclick = () => {
+            popUpBlock.classList.remove('display-none');
+            popUpBlock.classList.add('opasityOn');
+            authorization__block.classList.add('opasityOn');
+            setTimeout(() => {
+                popUpBlock.classList.remove('opasityOf');
+                authorization__block.classList.remove('opasityOf');
+            }, 100)
+        }
+        authorizationSwitch.onclick = () => {
+            registration__block.classList.remove('display-none');
+            registration__block.classList.add('opasityOn');
+            authorization__block.classList.add('opasityOf');
+            setTimeout(() => {
+                registration__block.classList.remove('opasityOf');
+                authorization__block.classList.remove('opasityOn');
+            }, 150)
+            setTimeout(() => {
+                authorization__block.classList.add('display-none');
+            }, 300)
+        }
+        registrationSwitch.onclick = () => {
+            authorization__block.classList.remove('display-none');
+            authorization__block.classList.add('opasityOn');
+            registration__block.classList.add('opasityOf');
+            setTimeout(() => {
+                authorization__block.classList.remove('opasityOf');
+                registration__block.classList.remove('opasityOn');
+            }, 150);
+            setTimeout(() => {
+                registration__block.classList.add('display-none');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
